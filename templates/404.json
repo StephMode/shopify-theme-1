@@ -1,3 +1,6 @@
+/* example for template<>section-structure */
+/* 💡 This json holds the the actual page the shopper can visit on the shopify shop */
+
 {
   "sections": {
     "main": {
