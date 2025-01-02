@@ -1,3 +1,4 @@
+{% comment %} 💡 think of it as the skelletal structure of the HTML of the webshop {% endcomment %}
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
@@ -40,6 +41,8 @@
     {%- endif -%}
 
     {{ content_for_header }}
+    {% comment %} 💡 special <head> tag {% endcomment %}
+    {% comment %} this is the place for shopify to inject scripts and a place where plugins can add scripts {% endcomment %}
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
@@ -311,6 +314,8 @@
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
+      {% comment %} 💡 special <head> tag {% endcomment %}
+      {% comment %} this is where all the template data will be plugged-in {% endcomment %}
     </main>
 
     {% sections 'footer-group' %}
