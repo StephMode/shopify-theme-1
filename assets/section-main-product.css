@@ -1,3 +1,7 @@
+/* This css among others contains the styling for specific parts of the code for the shop  */
+/* 💡 This css in particular is for the styling of the PRODUCT DETAIL PAGE */
+/* look out for 💡🏗️ for test-tweaks on the styling */
+
 product-info {
   display: block;
 }
@@ -245,13 +249,17 @@ a.product__text {
   text-transform: uppercase;
 }
 
+/* 💡🏗️ this for example changed bcg of product title */
 .product__title {
   word-break: break-word;
   margin-bottom: 1.5rem;
+  background-color: hotpink;
 }
 
+/* 💡🏗️ this for example changed color of product title */
 .product__title > * {
   margin: 0;
+  color: green;
 }
 
 .product__title > a {
