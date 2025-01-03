@@ -25,6 +25,17 @@
   <p>
     {{ 'templates.404.subtext' | t }}
   </p>
+  {% comment %}
+    💡🏗️
+    I've added a tag and gave it a text from the default locales
+    the "emotion" property ("😱😱😱") has just been added by myself
+
+    `| t ` might be the translation filter
+    https://shopify.dev/docs/storefronts/themes/architecture/locales/storefront-locale-files
+  {% endcomment %}
+  <h2>
+    {{ 'templates.404.emotion' | t }}
+  </h2>
 
   {% comment %}
     💡🏗️

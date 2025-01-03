@@ -1,3 +1,8 @@
+// this is where the texts come from when using obj notation like
+// {{ 'templates.404.emotion' | t }}
+// look out for 💡🏗️ for test-tweaks
+// type safety is in place here
+
 {
   "general": {
     "password_page": {
@@ -259,8 +264,10 @@
         "error_heading": "Please adjust the following:"
       }
     },
+    // 💡🏗️ the newly added key value pair "emotion" can now be accesed from every section using obj notation
     "404": {
       "title": "Page not found",
+      "emotion": "😱😱😱",
       "subtext": "404"
     }
   },

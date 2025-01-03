@@ -1,0 +1,34 @@
+# what this dir is for
+
+this dir hosts all the files that contain text content for the storefront.
+
+In other words: they host text content and translations of type `string`
+
+Default is english
+-> refer to `en.default.json`
+
+As opposed to hard-coded text-strings in sections, text-strings provided in these `.json` files provide standardized text that can be accessed thoughout the theme by merchants (using the web editor) and theme developers (using the object notation) alike. 
+
+the object and the reference to the objects in the `.json` files here are type-safe. So there must be TS working in the background.
+-> refer to:
+
+--> on individal *section* pages 
+
+```js
+{{ 'templates.404.emotion' | t }} 
+```
+any changes to the type here will cause type errors
+
+--> on *locales* files
+
+```js
+    "404": {
+      "title": "Page not found",
+      "emotion": "😱😱😱",
+      "subtext": "404"
+    }
+```
+any value other than that of type `string` will throw a `TypeError`.
+
+
+
