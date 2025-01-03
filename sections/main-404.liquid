@@ -9,11 +9,13 @@
 <style type="text/css">
   .template-404 .title + * {
     margin-top: 1rem;
+    color: green;
   }
 
   @media screen and (min-width: 750px) {
     .template-404 .title + * {
       margin-top: 2rem;
+      color: hotpink;
     }
   }
 </style>
@@ -22,8 +24,40 @@
   <p>
     {{ 'templates.404.subtext' | t }}
   </p>
+
+  {% comment %}
+    💡🏗️
+    you can also add more simple tags like so
+    the output of object notation {{ 'templates.404.title' | t }} can be seen before the string "lala"
+    🤔 still need to find out where this is exactly coming from ... maybe I should try the object documentation of shopify
+  {% endcomment %}
+  <h1>
+    {{ 'templates.404.title' | t }}
+
+    lala
+  </h1>
+  {% comment %}
+    💡🏗️ new elements can be implemented easily like so:
+
+    the class here has been added to base.css and is called upon here.
+  {% endcomment %}
+  <iframe
+    class="notfound-404-page-animation"
+    src="https://giphy.com/embed/UoeaPqYrimha6rdTFV"
+    width="480"
+    height="271"
+    style=""
+    frameBorder="0"
+    class="giphy-embed"
+    allowFullScreen
+  ></iframe>
+  <p><a href="https://giphy.com/gifs/STARFACE-GmbH-looping-404-starface-UoeaPqYrimha6rdTFV">via GIPHY</a></p>
   <h1 class="title">
     {{ 'templates.404.title' | t }}
+    {% comment %}
+      changing the content of the h1 tag to any string doesn't change the styling.
+       👉🏻 the styling here comes from base.css
+    {% endcomment %}
   </h1>
   <a href="{{ routes.all_products_collection_url }}" class="button">
     {{ 'general.continue_shopping' | t }}

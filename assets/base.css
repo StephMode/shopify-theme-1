@@ -773,6 +773,15 @@ summary::-webkit-details-marker {
 .title,
 .title-wrapper-with-link {
   margin: 3rem 0 2rem;
+  color: hotpink;
+  border: 1px solid blue;
+    /* among others, this color declaration changes the color with which the title on the 404 page ("Page not found") is rendered */
+}
+
+/* 🏗️ attempt to introduce class for my iframe gif */
+.notfound-404-page-animation {
+  border-radius: 20px;
+  box-shadow: inset;
 }
 
 .title-wrapper-with-link .title {
