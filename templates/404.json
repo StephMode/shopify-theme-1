@@ -1,13 +1,23 @@
 /* example for template<>section-structure */
 /* 💡 This json holds the the actual page the shopper can visit on the shopify shop */
+// json are useul, because they enable the user of the editor to add sections without having to code
 
 {
+  // 💡 an object that determines which sections will be rendered on the page/template
   "sections": {
     "main": {
       "type": "main-404"
+    },
+    "abc": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contact form" 
+      }
     }
   },
+  // 💡 an array that determines the order in which the sections of the template are going to be displayed
   "order": [
+    "abc",
     "main"
   ]
 }
