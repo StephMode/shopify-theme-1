@@ -778,10 +778,17 @@ summary::-webkit-details-marker {
     /* among others, this color declaration changes the color with which the title on the 404 page ("Page not found") is rendered */
 }
 
-/* 🏗️ attempt to introduce class for my iframe gif */
+/* 🏗️ this is to introduce a class for my iframe gif */
 .notfound-404-page-animation {
   border-radius: 20px;
   box-shadow: inset;
+}
+
+/* 🏗️ this is to tinker with the container of the main-404-liquid */
+.notfound-404-page-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 }
 
 .title-wrapper-with-link .title {
