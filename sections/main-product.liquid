@@ -134,16 +134,18 @@
                   -%}
                 </div>
                 {% comment %} slight variation of conditionally rendered and schema-based price {% endcomment %}
-                <div id="price-{{ section.id }}" role="status">
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
-                </div>
+                {% comment %}
+                  <div id="price-{{ section.id }}" role="status">
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: true,
+                      price_class: 'price--large'
+                    -%}
+                  </div>
+                {% endcomment %}
                 {% comment %} attempt to hard code the price {% endcomment %}
-                <h2>{{ product.price | money }}</h2>
+                {% comment %} <h2>{{ product.price | money }}</h2> {% endcomment %}
 
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
