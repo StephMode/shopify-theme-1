@@ -99,14 +99,33 @@
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
+                  {% comment %} This is to try out the `product` obj {% endcomment %}
+                  <h2>{{ product.available | escape }}</h2>
+                  <h2>{{ product.category | escape }}</h2>
+                  <h2>{{ product.created_at | escape }}</h2>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
                     </h2>
                   </a>
                 </div>
+
               {%- when 'price' -%}
+                {% comment %} only when I delete this when statement, the rendering of the price doesn't rely on the schema anymore {% endcomment %}
+                {% comment %}
+                  💡 this is to render info related to the line with pricing
+                {% endcomment %}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {% comment %}
+                    💡on {{ block.shopify_attributes }}
+
+                    special object in liquid
+
+                    used in liquid to make blocks dynamic so that
+                    - they can be drag-and-dropped
+                    - can take custom attributes for styling
+                    - get a unique ID
+                  {% endcomment %}
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -114,11 +133,26 @@
                     price_class: 'price--large'
                   -%}
                 </div>
+                {% comment %} slight variation of conditionally rendered and schema-based price {% endcomment %}
+                <div id="price-{{ section.id }}" role="status">
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+                {% comment %} attempt to hard code the price {% endcomment %}
+                <h2>{{ product.price | money }}</h2>
+
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
+                {% comment %}
+                  💡 this is to conditionally render tax-related info text
+                {% endcomment %}
                 {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
                     {%- if cart.duties_included and cart.taxes_included -%}
@@ -191,6 +225,7 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+                {% comment %} 💡 this is for the product description {% endcomment %}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -723,12 +758,12 @@
     </script>
   </div>
 </product-info>
-
 {% schema %}
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
   "class": "section",
+  // 💡 blocks are resuable modules/components that can be added, removed and reordered within a section
   "blocks": [
     {
       "type": "@app"
@@ -736,6 +771,12 @@
     {
       "type": "text",
       "name": "t:sections.main-product.blocks.text.name",
+
+      // 💡 this array of objects contains the settings of blocks
+      // "settings" in this context means settings for the editor
+      // here, the developer can set limititations, values and give clear names for blocks to be displayed in the editor
+      // these settings don't affect the .liquid code
+      // EXAMPLE: "price"
       "settings": [
         {
           "type": "inline_richtext",
@@ -770,6 +811,11 @@
       "name": "t:sections.main-product.blocks.title.name",
       "limit": 1
     },
+
+    // 💡 info on properties of a block object
+    // the "type" acts as the identifier of the block
+    // the "name" serves as the clear name in natural language displayed in the editor for the merchant
+    // the "limit" here means that the merchant can only set one block of "price" in the editor
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
