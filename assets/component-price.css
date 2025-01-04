@@ -37,6 +37,7 @@
   }
 }
 
+/* 🏗️ this is where we might have interferences with my styling in the main product css  */
 .price--large {
   font-size: 1.6rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
