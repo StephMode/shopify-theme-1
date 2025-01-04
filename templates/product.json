@@ -30,7 +30,9 @@
           }
         },
         "quantity_selector": {
-          "type": "quantity_selector"
+          "type": "quantity_selector",
+          "disabled": true, 
+          // 💡 in most blocks, this property needs to be added so that a block is hidden on the storefront by default but still accessible in the editor
         },
         "buy_buttons": {
           "type": "buy_buttons",
