@@ -150,6 +150,7 @@ product-info {
 
 /* Product form */
 
+/* 💡 this is for styling the section with "basket" and "dynamic checkout" btns and so on */
 .product-form {
   display: block;
 }
@@ -195,6 +196,7 @@ product-info {
 
 .product-form__submit {
   margin-bottom: 1rem;
+  /* TODO: add UI properties for basekt btn here */
 }
 
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
@@ -221,6 +223,10 @@ product-info {
 
 /* Product info */
 
+/* TODO: add class selector only for info-container here, add properties as declarations */
+
+/* 💡 this is the class that wraps all product info and product form elements around itself  */
+/* 🏗️💡 will need a selector without the child selector */
 .product__info-container > * + * {
   margin: 1.5rem 0;
 }
@@ -253,13 +259,13 @@ a.product__text {
 .product__title {
   word-break: break-word;
   margin-bottom: 1.5rem;
-  background-color: hotpink;
+  /* background-color: hotpink; */
 }
 
 /* 💡🏗️ this for example changed color of product title */
 .product__title > * {
   margin: 0;
-  color: green;
+  /* color: green; */
 }
 
 .product__title > a {
@@ -282,9 +288,19 @@ a.product__text {
   margin-bottom: 0.5rem;
 }
 
+
+/* 💡 this is the selector to style the section containig prices and badges (if showbades=true in section) */
 .product .price__container {
   margin-bottom: 0.5rem;
 }
+
+/* TODO: declare class and add it to the section */
+/* 🏗️ in order to have tax and price in one line like in the brief, I'll need a wrapping container like so: */
+/* .price_and_product__tax__container {
+  display: flex;
+  align-items: flex-end;
+  background-color: yellow;
+} */
 
 .product .price dl {
   margin-top: 0.5rem;
@@ -326,6 +342,7 @@ a.product__text {
   padding: 0;
 }
 
+/* 💡 this is to style the tax tag */
 .product__tax {
   margin-top: -1.4rem;
 }
