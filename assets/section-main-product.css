@@ -195,8 +195,18 @@ product-info {
 }
 
 .product-form__submit {
+  /* for the button */
   margin-bottom: 1rem;
-  /* TODO: add UI properties for basekt btn here */
+  background: #1F47FF 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  /* for the text content of the button element */
+  text-align: left;
+  font: normal normal 600 18px/22px Montserrat;
+  /* FIXME: font needs to be implemented */
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
 }
 
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
