@@ -5,13 +5,14 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
           }
         },
         "title": {
-          "type": "title"
+          "type": "title",
         },
         "caption": {
           "type": "text",

@@ -223,14 +223,15 @@ product-info {
 
 /* Product info */
 
-/* TODO: add class selector only for info-container here, add properties as declarations */
+
 .product__info-container {
   top: 287px;
   left: 1051px;
   width: 475px;
   height: 275px;
 
-  padding: 5px;
+  padding: 28px;
+  /* TODO: check if this needs to be fixed */
 
   background: #FFFFFF 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 20px #00000029;
