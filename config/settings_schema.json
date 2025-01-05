@@ -1,4 +1,7 @@
 // 💡 this is what's available on the Theme Settings in the editor on admin.shopify
+// also this files controls the organization and content of the theme settings
+// https://shopify.dev/docs/storefronts/themes/architecture/config/settings-schema-json
+// look out for 💡 for infos
 [
   {
     "name": "theme_info",
@@ -104,6 +107,7 @@
   },
   {
     "name": "t:settings_schema.typography.name",
+    // 💡 these are the settings for the typography picker
     "settings": [
       {
         "type": "header",
@@ -112,7 +116,8 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
+        "default": "montserrat_n4",
+        // 💡 this is where you would set the default font family for the font picker in the editor
         "label": "t:settings_schema.typography.settings.type_header_font.label",
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
@@ -133,7 +138,7 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "assistant_n4",
+        "default": "montserrat_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
       },

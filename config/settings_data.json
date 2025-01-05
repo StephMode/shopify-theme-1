@@ -1,3 +1,6 @@
+// This is where all the setting selections of the shop are being saved
+// https://shopify.dev/docs/storefronts/themes/architecture/config/settings-schema-json
+// look out for 💡 for infos
 {
   "current": "Default",
   "presets": {
@@ -60,9 +63,10 @@
           }
         }
       },
-      "type_header_font": "assistant_n4",
+      "type_header_font": "montserrat_n4",
+      // 💡 this is the setting for the default font of the shop
       "heading_scale": 100,
-      "type_body_font": "assistant_n4",
+      "type_body_font": "montserrat_n4",
       "body_scale": 100,
       "page_width": 1200,
       "spacing_sections": 0,
