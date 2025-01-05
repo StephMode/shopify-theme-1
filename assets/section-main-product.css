@@ -1328,7 +1328,12 @@ a.product__text {
 }
 
 .product__inventory .icon-inventory-status circle:first-of-type {
-  opacity: .3;
+  /* opacity: .3; */
+  background: #25A525 0% 0% no-repeat padding-box;
+  border: 1px solid #25A525;
+  opacity: 1;
+  width: 15px;
+  height: 15px;
 }
 
 /* Icon with text */
