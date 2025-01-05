@@ -1306,6 +1306,12 @@ a.product__text {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-align: left;
+  height: 19px;
+  font: normal normal medium 15px/19px Montserrat;
+  letter-spacing: 0px;
+  color: #25A525;
+  opacity: 1;
 }
 
 .product__inventory .svg-wrapper,
