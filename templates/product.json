@@ -35,6 +35,17 @@
           "disabled": true, 
           // 💡 in most blocks, this property needs to be added so that a block is hidden on the storefront by default but still accessible in the editor
         },
+        // 🏗️💡 added the inventory `Inventory Status` Block per default here
+        // 💡 never forget to add new blocks to both "blocks" and "block-order"
+        "inventory": {
+          "type": "inventory",
+          "disabled": false,
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 0,
+            "show_inventory_quantity": false
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -99,6 +110,8 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        // 💡 never forget to add new blocks to both "blocks" and "block-order"
+        "inventory",
         "buy_buttons",
         "description",
         "collapsible-row-0",
